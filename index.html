@@ -156,19 +156,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-我的个人博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-awk使用笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/17/我的个人博客/">我的个人博客</a>
+      <a class="article-title" href="/2019/07/17/awk使用笔记/">awk使用笔记</a>
     </h1>
   
 
         
-        <a href="/2019/07/17/我的个人博客/" class="archive-article-date">
+        <a href="/2019/07/17/awk使用笔记/" class="archive-article-date">
   	<time datetime="2019-07-17T09:18:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-17</time>
 </a>
         
@@ -176,7 +176,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <ul>
+<li><p>使用<code>awk</code>为文件每一行添加Sample名字</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F <span class="string">'\t'</span> <span class="string">'&#123;print $0, SampleID&#125;'</span> 操作文件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何使用awk 调用Shell变量<br>变量跳过文件首行，输出文件的每一行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> `cat name.txt`; <span class="keyword">do</span> awk -F <span class="string">'\t'</span> <span class="string">'NR&gt;1&#123;print $0,  "\t'</span><span class="variable">$i</span><span class="string">'"&#125;'</span> <span class="variable">$i</span>.hg38_multianno.txt &gt; <span class="variable">$i</span>.new.txt; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<p>Shell变量在awk中使用要用单引号将变量隔离开</p>
+</li>
+<li><p>awk中if的使用方法</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F <span class="string">'\t'</span> <span class="string">'&#123;if($2 &gt; 0) print $1&#125;'</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
       
 
       
@@ -184,11 +198,22 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">awk,linux,bioinformatics</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/17/我的个人博客/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/07/17/awk使用笔记/">展开全文 >></a>
         </p>
       
 
@@ -384,6 +409,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">awk,linux,bioinformatics</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

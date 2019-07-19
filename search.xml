@@ -3,10 +3,30 @@
   
     
     <entry>
-      <title><![CDATA[我的个人博客]]></title>
-      <url>/2019/07/17/%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
-      <content type="html"></content>
+      <title><![CDATA[awk使用笔记]]></title>
+      <url>/2019/07/17/awk%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<ul>
+<li><p>使用<code>awk</code>为文件每一行添加Sample名字</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F <span class="string">'\t'</span> <span class="string">'&#123;print $0, SampleID&#125;'</span> 操作文件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何使用awk 调用Shell变量<br>变量跳过文件首行，输出文件的每一行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> `cat name.txt`; <span class="keyword">do</span> awk -F <span class="string">'\t'</span> <span class="string">'NR&gt;1&#123;print $0,  "\t'</span><span class="variable">$i</span><span class="string">'"&#125;'</span> <span class="variable">$i</span>.hg38_multianno.txt &gt; <span class="variable">$i</span>.new.txt; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<p>Shell变量在awk中使用要用单引号将变量隔离开</p>
+</li>
+<li><p>awk中if的使用方法</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F <span class="string">'\t'</span> <span class="string">'&#123;if($2 &gt; 0) print $1&#125;'</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+]]></content>
       
+        
+        <tags>
+            
+            <tag> awk,linux,bioinformatics </tag>
+            
+        </tags>
         
     </entry>
     
