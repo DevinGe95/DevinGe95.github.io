@@ -156,6 +156,260 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/19/Python3/">Python3学习入门</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/19/Python3/" class="archive-article-date">
+  	<time datetime="2019-07-19T12:03:32.045Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a>Python3</h1><h2 id="python3入门-practice"><a href="#python3入门-practice" class="headerlink" title="python3入门 practice"></a>python3入门 practice</h2><ul>
+<li><strong>Python3 <code>Input()</code></strong> 拿到的是字符而不是数字<blockquote>
+<h3 id="IF"><a href="#IF" class="headerlink" title="IF"></a><strong>IF</strong></h3></blockquote>
+</li>
+</ul>
+<hr>
+<p> <strong>python</strong>中<code>if</code>的语法为</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件</span><br><span class="line">    选择执行的语句</span><br></pre></td></tr></table></figure>
+
+<p>  <code>if</code>内部的语句需要有一个统一的缩进（就是指每一行开头的空格），一般用四个空格。缩进表示这些代码属于这个<code>if</code>条件内部，是一个“代码块”。Python用这种方法替代了其他语言的<code>{}</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">    age = int(input())</span><br><span class="line">    <span class="keyword">if</span> age &gt; = <span class="number">18</span>:</span><br><span class="line">        print(<span class="string">"你是个成年人了！"</span>)</span><br><span class="line">```  </span><br><span class="line">```python</span><br><span class="line">    num =<span class="number">10</span></span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'Guess what I think?'</span>) </span><br><span class="line">    answer = int(input()) </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> answer&lt;num: </span><br><span class="line">        <span class="keyword">print</span> (<span class="string">'too small!'</span>) </span><br><span class="line">    <span class="keyword">if</span> answer&gt;num: </span><br><span class="line">        <span class="keyword">print</span> (<span class="string">'too big!'</span>) </span><br><span class="line">    <span class="keyword">if</span> answer==num: </span><br><span class="line">        <span class="keyword">print</span> (<span class="string">'BINGO!'</span>)</span><br></pre></td></tr></table></figure>
+
+<p> <code>if</code>在编程语言中被称为“<strong>控制流语句</strong>”，用来控制程序的执行顺序。</p>
+<blockquote>
+<h3 id="While"><a href="#While" class="headerlink" title="While"></a><strong>While</strong></h3></blockquote>
+<hr>
+<p>  语法为：<br>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> 条件：</span><br><span class="line">    循环执行的语句</span><br></pre></td></tr></table></figure></p>
+<p> 举例子：<br> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a =<span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> a != <span class="number">0</span> :</span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'please input'</span>)</span><br><span class="line">    a = int(input())</span><br><span class="line"><span class="keyword">print</span> (<span class="string">'over'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>程序执行后，会不断想你询问输入，直到你输入0，条件不满足，循环结束</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">num = <span class="number">5</span></span><br><span class="line">bingo = <span class="literal">False</span></span><br><span class="line">print(<span class="string">'Guess what i think'</span>)</span><br><span class="line"><span class="keyword">while</span> bingo == <span class="literal">False</span>:    </span><br><span class="line">    a = int(input())    </span><br><span class="line">    <span class="keyword">if</span> a &gt; num:        </span><br><span class="line">        print(<span class="string">"bigger than it"</span>)    </span><br><span class="line">   <span class="keyword">if</span> a &lt; num:        </span><br><span class="line">        print(<span class="string">"smaller than it"</span>)    </span><br><span class="line">   <span class="keyword">if</span> a == num:       </span><br><span class="line">        print(<span class="string">'Bingo'</span>)        </span><br><span class="line">        bingo = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h3 id="Random"><a href="#Random" class="headerlink" title="Random"></a>Random</h3></blockquote>
+<hr>
+<p> 引入模块的方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> 模块名 <span class="keyword">import</span> 方法名</span><br></pre></td></tr></table></figure>
+
+<p>  产生随机的整数，需要加载的模块</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br></pre></td></tr></table></figure>
+
+<p> 使用randint(),括号中要提供两个数字，分别是产生随机整数范围的下限和上限。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">randint(<span class="number">5</span>, <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+<p> 更改小游戏的代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line">num = randint(<span class="number">1</span>, <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'Guess what I think?'</span>)</span><br><span class="line">bingo = <span class="literal">False</span></span><br><span class="line"><span class="keyword">while</span> bingo == <span class="literal">False</span>:</span><br><span class="line">    answer = int(input())</span><br><span class="line">    <span class="keyword">if</span> answer &lt; num:</span><br><span class="line">        <span class="keyword">print</span> (<span class="string">'too small'</span>)</span><br><span class="line">    <span class="keyword">if</span> answer &gt; num:</span><br><span class="line">        print(<span class="string">'too big'</span>)</span><br><span class="line">    <span class="keyword">if</span> answer == num:</span><br><span class="line">        <span class="keyword">print</span> (<span class="string">'BINGO'</span>)</span><br><span class="line">        bingo == <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ol>
+<li>第一个字符必须是字母或者下划线_</li>
+<li>剩下的部分可以是字母、下划线_或数字0~9</li>
+<li>变量名称是对大小写敏感的，myname 和 myName 不是同一个变量。<h3 id="逻辑判断"><a href="#逻辑判断" class="headerlink" title="逻辑判断"></a>逻辑判断</h3></li>
+</ol>
+</blockquote>
+<hr>
+<p>bool类型：True 或者 False</p>
+<table>
+<thead>
+<tr>
+<th>not</th>
+<th>逻辑“非”</th>
+<th>如果 x 为 True，则 not x 为 False</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>and</td>
+<td>逻辑“与”</td>
+<td>如果 x 为 True，且 y 为 True，则 x and y 为 True</td>
+</tr>
+<tr>
+<td>or</td>
+<td>逻辑“或”</td>
+<td>如果x,y中至少有一个为True，则x or y 为True</td>
+</tr>
+</tbody></table>
+<blockquote>
+<h3 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h3></blockquote>
+<hr>
+<p><code>range(1,101)</code>才是从1到100，表示从1开始到101终止，不包括101，与randint不同<br>输出从1到100</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">101</span>)</span><br><span class="line">    print( i )</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3></blockquote>
+<hr>
+<p> \ 被称作转译字符，除了用来表示引号，还有比如用<br>    1.  \n 表示字符串中的换行（相当于按一下回车键的效果）<br>    2.  \t 表示字符串中的制表符（相当于按一下tab键的效果）<br>    3.  \ 表示字符串中的 \ （因为单个斜杠被用来做转义了，所以真的要表示 \ 字符，就要两个斜杠）<br>\ 还有个用处，就是用来在代码中换行，而不影响输出的结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">this <span class="keyword">is</span> the \</span><br><span class="line">same line</span><br></pre></td></tr></table></figure>
+
+<p>三引号表示字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">"what's your name?"</span></span><br><span class="line"><span class="string">"I am dashabi"</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h3 id="字符串格式化"><a href="#字符串格式化" class="headerlink" title="字符串格式化"></a>字符串格式化</h3></blockquote>
+<hr>
+<p>字符串连起来输出可以用<code>+</code>号连接</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> (str1 + str2)</span><br></pre></td></tr></table></figure>
+
+<p>如果把一个数字加到文字后面输出，不可以直接用加号</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> ( <span class="string">'my age is '</span> + str(<span class="number">18</span>) )</span><br></pre></td></tr></table></figure>
+
+<p>或者用%对字符串进行<strong>格式化</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">num = <span class="number">18</span></span><br><span class="line">print(<span class="string">'My name is %d'</span> % num)</span><br></pre></td></tr></table></figure>
+
+<p><strong>%d</strong>只能用来替换整数，对于浮点型，需要使用%f，保留两位小数则用 <strong>%.2f</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> (<span class="string">'price is %f'</span> % <span class="number">4.99</span>)</span><br></pre></td></tr></table></figure>
+
+<p>用 <strong>%s</strong>来替换一段字符串<br>当需要多个字符串进行格式化的时候，只要在前面用对应的%替代，并在后面按顺序排列就可以了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">'Lily'</span></span><br><span class="line">score = <span class="number">95</span></span><br><span class="line"><span class="keyword">print</span> (<span class="string">"%s 's score is %d"</span>  %  (name, score))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h3 id="循环的嵌套"><a href="#循环的嵌套" class="headerlink" title="循环的嵌套"></a>循环的嵌套</h3></blockquote>
+<hr>
+<p>如果想要程序输出这样的文本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*</span><br><span class="line">**</span><br><span class="line">***</span><br><span class="line">****</span><br><span class="line">*****</span><br></pre></td></tr></table></figure>
+
+<p>可以使用循环嵌套，根据外层循环的序数，设置内层循环应当执行的次数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">5</span>):</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, i+<span class="number">1</span>):</span><br><span class="line">        print(<span class="string">'*'</span>, end = <span class="string">''</span>)</span><br><span class="line">    print()</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3></blockquote>
+<hr>
+<ul>
+<li>int(x)     #把x转换成整数</li>
+<li>float(x)  #把x转换成浮点数</li>
+<li>str(x)     #把x转换成字符串</li>
+<li>bool(x)   #把x转换成bool值<br>bool类型的转换和其他的有所不同：<ul>
+<li><strong>为0的数字</strong>，包括0， 0.0</li>
+<li><strong>空字符串</strong>， 包括‘’，“”“”</li>
+<li>表示空值的<strong>None</strong></li>
+<li><strong>空集合</strong>， 包括（），[], {}<br>以上这些值会被认为是False，其他的值都认为是True.</li>
+</ul>
+</li>
+</ul>
+<p><strong>None</strong> 是 python 中的一个特殊值，表示什么都没有，它和 0、空字符、False、空集合 都不一样。</p>
+<p>在 if、while 等条件判断语句里，判断条件会自动进行一次bool的转换</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">'123'</span></span><br><span class="line"><span class="keyword">if</span> a :</span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'this is not a blank string'</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3></blockquote>
+<hr>
+<p>如果我们要自己写一个函数，就需要去 定义 它。python里的关键字叫 def（define的缩写），格式如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sayHello</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">print</span> (<span class="string">"hello world!"</span>)</span><br><span class="line">    </span><br><span class="line">sayHello() <span class="comment">#进行函数的调用</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h3 id="函数应用实例"><a href="#函数应用实例" class="headerlink" title="函数应用实例"></a>函数应用实例</h3></blockquote>
+<hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isEqual</span><span class="params">(num1,num2)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> num1&lt;num2:</span><br><span class="line">        print(<span class="string">"too small"</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">if</span> num1&gt; num2:</span><br><span class="line">        <span class="keyword">print</span> (<span class="string">"too big"</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">if</span> num1 == num2:</span><br><span class="line">        <span class="keyword">print</span> (<span class="string">"bingo!"</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">num = randint(<span class="number">1</span>, <span class="number">100</span>) </span><br><span class="line">print(<span class="string">'Guess what I think?'</span>) </span><br><span class="line">bingo = <span class="literal">False</span> </span><br><span class="line"><span class="keyword">while</span> bingo == <span class="literal">False</span>: </span><br><span class="line">    answer = int(input()) </span><br><span class="line">    bingo = isEqual(answer, num)</span><br></pre></td></tr></table></figure>
+
+<p><strong>return</strong> 是函数的结束语句，<strong>return</strong> 后面的值被作为这个函数的返回值。函数中任何地方的 return 被执行到的时候，这个函数就会立刻结束并跳出。<br><strong>注意</strong>：函数的 返回值 和我们前面说的 输出是两回事。<strong>print</strong> 输出是将结果显示在控制台中，最终一定是转成字符类型；而 返回值，是将结果返回到调用函数的地方，可以是任何类型。</p>
+<blockquote>
+<h3 id="if-elif-else"><a href="#if-elif-else" class="headerlink" title="if, elif, else"></a>if, elif, else</h3></blockquote>
+<hr>
+<p><img src="en-resource://database/812:1" alt="280d5bf247827b84388cd5aa608d1cd8.png"></p>
+<p>if, elif, else 可组成一个整体的条件语句。</p>
+<ol>
+<li>if 是必须有的；</li>
+<li>elif 可以没有，也可以有很多个，每个elif条件不满足时会进入下一个elif判断；一旦满足，执行完就结束整个条件语句；</li>
+<li>else 可以没有，如果有的话只能有一个，必须在条件语句的最后。<blockquote>
+<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3></blockquote>
+</li>
+</ol>
+<hr>
+<p><strong>list</strong>格式就是用 <strong>中括号[]</strong> 包围、<strong>逗号</strong>隔开的一组数值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]</span><br></pre></td></tr></table></figure>
+
+<p>列表中的元素可以是数值，字符，也可以是多种类型的混合<br>访问列表中的元素时，下标是从0开始。不能访问一个不存在的元素，程序会报错，提示你index越界了</p>
+<ol>
+<li><p><strong>修改list中的某一个元素</strong>，只需要直接给那个元素直接赋值就可以了：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">l[<span class="number">0</span>] = <span class="number">123</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>向list中添加元素</strong>：list中有一个append方法，可以增加元素。以l这个列表为例，调用的方法是：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">l.append(<span class="number">1024</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>删除list中的元素，要用到del:</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">del</span> l[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>将<strong>list</strong>应用在点球小游戏中：<br>每一轮，你先输入一个方向射门，然后电脑随机判断一个方向扑救。<br>方向不同则算进球得分，方向相同算扑救成功，不得分。<br>之后攻守轮换，你选择一个方向扑救，电脑随机方向射门。<br>第5轮结束之后，如果得分不同，比赛结束。<br>5轮之内，如果一方即使踢进剩下所有球，也无法达到另一方当前得分，比赛结束。<br>5轮之后平分，比赛继续进行，直到某一轮分出胜负。</p>
+<p>random中的另一个方法<code>choice</code>，他的作用是从一个list中随机挑选一个元素。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> choice</span><br><span class="line"><span class="keyword">print</span> (<span class="string">"Choose one side to shoot: "</span>)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">"left, center, rigth"</span>)</span><br><span class="line">you = input()</span><br><span class="line"><span class="keyword">print</span> (<span class="string">"You kiced"</span> + you)</span><br><span class="line">direction = [<span class="string">'left'</span>, <span class="string">'center'</span>, <span class="string">'right'</span>]</span><br><span class="line">com = choice(direction)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">'Computer saved '</span>+ com)</span><br><span class="line"><span class="keyword">if</span> you != com :</span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'Goal!'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'Oops...'</span>)</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>list有两类常用操作： <strong>索引（index）</strong> 和 <strong>切片（slice）</strong><br>l[-1]表示l中的最后一个元素。l[-3]表示倒数第3个元素。</li>
+</ol>
+<p><strong>切片操作符是在[]</strong> 内提供一对可选数字，用:分割。冒号前的数表示切片的开始位置，冒号后的数字表示切片到哪里结束。同样，计数从0开始。<br><strong>注意：开始位置包含在切片中，而结束位置不包括。</strong><br>如果不指定第一个数，切片就从列表第一个元素开始。<br>如果不指定第二个数，就一直到最后一个元素结束。<br>都不指定，则返回整个列表。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">l[:<span class="number">3</span>]</span><br><span class="line">l[<span class="number">1</span>:]</span><br><span class="line">l[:]</span><br></pre></td></tr></table></figure>
+
+<p>同索引一样，切片中的数字也可以使用负数。比如：l[1:-1]</p>
+<hr>
+<p>点球游戏！！！</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> choice</span><br><span class="line"></span><br><span class="line">score = [<span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">direction = [<span class="string">'left'</span>, <span class="string">'center'</span>, <span class="string">'right'</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">kick</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'==== You Kick! ===='</span> % (i+<span class="number">1</span>))</span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'Choose one side to shoot:'</span>)</span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'left, center, right'</span>)</span><br><span class="line">    you = input()</span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'You kicked'</span> + you)</span><br><span class="line">    com = choice(direction)</span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'Computer saved'</span> + com)</span><br><span class="line">    <span class="keyword">if</span> yon != com:</span><br><span class="line">        <span class="keyword">print</span> (<span class="string">'Goal!'</span>)</span><br><span class="line">        score[<span class="number">0</span>] += <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">print</span> (<span class="string">'Oops....'</span>)</span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'Score: %d(you) - %d(com)'</span> % (score[<span class="number">0</span>], score[<span class="number">1</span>]))</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'==== You Save! ===='</span> % (i+<span class="number">1</span>)) </span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'Choose one side to save:'</span>) </span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'left, center, right'</span>) </span><br><span class="line">    you = input() </span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'You saved '</span> + you) </span><br><span class="line">    com = choice(direction) </span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'Computer kicked '</span> + com) </span><br><span class="line">    <span class="keyword">if</span> you == com: </span><br><span class="line">        <span class="keyword">print</span> (<span class="string">'Saved!'</span>) </span><br><span class="line">    <span class="keyword">else</span>: </span><br><span class="line">        <span class="keyword">print</span> (<span class="string">'Oops...'</span>) </span><br><span class="line">        score[<span class="number">1</span>] += <span class="number">1</span> </span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'Score: %d(you) - %d(com)\n'</span> % (score[<span class="number">0</span>], score[<span class="number">1</span>]))  </span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>): <span class="comment">#range(5) 等同于range(0,5)</span></span><br><span class="line">    print(<span class="string">'==== Round %d ===='</span> % (i + <span class="number">1</span>)) </span><br><span class="line">    kick()</span><br><span class="line"><span class="keyword">while</span> (score [<span class="number">0</span>] == score[<span class="number">1</span>]):</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'==== Round %d ===='</span> % (i+<span class="number">1</span>))</span><br><span class="line">    kick()</span><br><span class="line"><span class="keyword">if</span> score[<span class="number">0</span>] &gt; score[<span class="number">1</span>]: </span><br><span class="line">    print(<span class="string">'You Win!'</span>) </span><br><span class="line"><span class="keyword">else</span>: </span><br><span class="line">    print(<span class="string">'You Lose.'</span>)</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/19/Python3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-servernote" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -512,6 +766,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">linux;server;update</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
             
             <div class="clearfix"></div>
