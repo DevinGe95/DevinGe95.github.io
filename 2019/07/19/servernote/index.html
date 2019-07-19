@@ -7,19 +7,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/7 | Devin&#39;s bioinformatics</title>
+  <title>服务器管理与升级中遇到的问题 | Devin&#39;s bioinformatics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Devin�ĸ�����ҳ��R��python��ѧϰ�ʼ��Լ��ճ���������">
-<meta name="keywords" content="Bioinformatics">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Devin&#39;s bioinformatics">
-<meta property="og:url" content="http://yoursite.com/archives/2019/07/index.html">
+  <meta name="description" content="服务器升级问题   1http://apt.sw.be/redhat/el6/en/x86_64/dag/repodata/repomd.xml: [Errno 14] PYCURL ERROR 6 - &quot;Couldn‘t resolve host ‘apt.sw.be‘&quot;    1.cd /etc/yum.repos.d 进入这个目录，里面有个文件dag.repo 文件(可能名称会不一样)里面">
+<meta name="keywords" content="linux;server;update">
+<meta property="og:type" content="article">
+<meta property="og:title" content="服务器管理与升级中遇到的问题">
+<meta property="og:url" content="http://yoursite.com/2019/07/19/servernote/index.html">
 <meta property="og:site_name" content="Devin&#39;s bioinformatics">
-<meta property="og:description" content="Devin�ĸ�����ҳ��R��python��ѧϰ�ʼ��Լ��ճ���������">
+<meta property="og:description" content="服务器升级问题   1http://apt.sw.be/redhat/el6/en/x86_64/dag/repodata/repomd.xml: [Errno 14] PYCURL ERROR 6 - &quot;Couldn‘t resolve host ‘apt.sw.be‘&quot;    1.cd /etc/yum.repos.d 进入这个目录，里面有个文件dag.repo 文件(可能名称会不一样)里面">
 <meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-07-19T11:49:56.117Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Devin&#39;s bioinformatics">
-<meta name="twitter:description" content="Devin�ĸ�����ҳ��R��python��ѧϰ�ʼ��Լ��ճ���������">
+<meta name="twitter:title" content="服务器管理与升级中遇到的问题">
+<meta name="twitter:description" content="服务器升级问题   1http://apt.sw.be/redhat/el6/en/x86_64/dag/repodata/repomd.xml: [Errno 14] PYCURL ERROR 6 - &quot;Couldn‘t resolve host ‘apt.sw.be‘&quot;    1.cd /etc/yum.repos.d 进入这个目录，里面有个文件dag.repo 文件(可能名称会不一样)里面">
   
     <link rel="alternative" href="/atom.xml" title="Devin&#39;s bioinformatics" type="application/atom+xml">
   
@@ -155,36 +156,79 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-servernote" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/19/servernote/" class="archive-article-date">
-  	<time datetime="2019-07-19T10:35:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-19</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/19/servernote/">服务器管理与升级中遇到的问题</a>
+    <h1 class="article-title" itemprop="name">
+      服务器管理与升级中遇到的问题
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/07/19/servernote/" class="archive-article-date">
+  	<time datetime="2019-07-19T10:35:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>服务器升级问题</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://apt.sw.be/redhat/el6/en/x86_64/dag/repodata/repomd.xml: [Errno 14] PYCURL ERROR 6 - <span class="string">"Couldn‘t resolve host ‘apt.sw.be‘"</span></span><br></pre></td></tr></table></figure>
+
+<p>  1.<code>cd /etc/yum.repos.d</code> 进入这个目录，里面有个文件dag.repo 文件(可能名称会不一样)里面的 <code>baseurl=http://apt.sw.be/redhat/el$releasever/en/$basearch/dag</code><br>  2.<code>vi</code> 编译一下里面的地址baseurl, 把后面的地址更换 我索性网上找到了有一篇文章<a href="https://blog.csdn.net/zhujiangm/article/details/42614105" target="_blank" rel="noopener">https://blog.csdn.net/zhujiangm/article/details/42614105</a>有很多个地址，然后就替换进去，不怕地址都用不了。 </p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> [dag]</span><br><span class="line"> name=Dag RPM Repository <span class="keyword">for</span> Red Hat Enterprise Linux</span><br><span class="line"> baseurl = http://archive.cs.uu.nl/mirror/dag.wieers/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag</span><br><span class="line">    http://apt.sw.be/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag</span><br><span class="line">    http://dag.linux.iastate.edu/dag/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag</span><br><span class="line">    http://ftp.riken.jp/Linux/dag/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag/</span><br><span class="line">    http://ftp2.lcpe.uni-sofia.bg/freshrpms/pub/dag/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag</span><br><span class="line"> http://ftp.heanet.ie/pub/freshrpms/pub/dag/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag</span><br><span class="line">    http://ftp-stud.fht-esslingen.de/dag/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag</span><br><span class="line">    http://mirror.cpsc.ucalgary.ca/mirror/dag/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag</span><br><span class="line">    http://mirrors.ircam.fr/pub/dag/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag</span><br><span class="line">    http://rh-mirror.linux.iastate.edu/pub/dag/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag</span><br><span class="line">    http://rpmfind.net/linux/dag/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag</span><br><span class="line">    http://wftp.tu-chemnitz.de/pub/linux/dag/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag</span><br><span class="line">    http://www.mirrorservice.org/sites/apt.sw.be/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag</span><br><span class="line">gpgcheck=1</span><br><span class="line">enabled=1</span><br><span class="line">gpgkey=http://dag.wieers.com/rpm/packages/RPM-GPG-KEY.dag.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>服务器升级   <code>Error: Package: libgpod-0.8.3-7.el7.x86_64 (@epel)</code><br>解决办法： 先运行<code>yum downgrade libgpod</code> 然后报错就可以解决了</p>
+</li>
+<li><p>kill掉一个用户的所有进程</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">killall –u username</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechatpay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -196,95 +240,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABzklEQVR42u3aQY7CMAwFUO5/aUZixWjU8m2noSO9rFCB5rULK/nO4xGP52u8f34fR7/5+/ujK4sHLi7umPs8HeeU6pXkkY4MuLi4+7l58crL1tGU53f7YMPFxb0Z93yJk0yWF0dcXNz/wu1tY6qvAxcX9z7cZPPTW7IkD3nJXg0XF3fA7QWmaz9fnu/i4uIu6kpUC0p1+vLsuLi4W7h5IyS5nges1UC2kLXg4uKOueebmerDzIOSDxstXFzcL3F7h66ShUvv/r+u4OLibuH2DlJUo8y8ZRI1aXBxcbdw82XHqlw2KWeFd4yLi3sZd9JEad46Xhgt7vng4uLGBy/m8ejkbUUPiYuLu4WblK18cTOJXxd0gXBxcRdx8zCieggjL2S4uLh35iYNj7xZkpTC6svCxcXdw60esFi7AMo3Rbi4uDu5z3isao3krVxcXNzvcqvBZb7oqZatqJDh4uJu4VbLWW8Dk5SwZicWFxd3KbfXzaw2bnN6/i0uLu7V3GrxystQXgTz7RAuLu5ObjUerQYcowNY8zQXFxf3Mu7aO/davLi4uHfm5s3RHBQ1cnBxcTdyqxNM/lWNQpp7NVxc3AF3HphWw5EEh4uL+yXuD6+8D/YxTcnEAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/17/awk使用笔记/" class="archive-article-date">
-  	<time datetime="2019-07-17T09:18:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-17</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/17/awk使用笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">awk使用笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/17/awk使用笔记/">awk使用笔记</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">awk linux bioinformatics</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/17/生信分析日常/" class="archive-article-date">
-  	<time datetime="2019-07-17T09:13:55.898Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/17/生信分析日常/">生信分析日常笔记</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">生信分析日常</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -307,8 +362,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

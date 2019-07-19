@@ -157,6 +157,93 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-servernote" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/19/servernote/">服务器管理与升级中遇到的问题</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/19/servernote/" class="archive-article-date">
+  	<time datetime="2019-07-19T10:35:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>服务器升级问题</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://apt.sw.be/redhat/el6/en/x86_64/dag/repodata/repomd.xml: [Errno 14] PYCURL ERROR 6 - <span class="string">"Couldn‘t resolve host ‘apt.sw.be‘"</span></span><br></pre></td></tr></table></figure>
+
+<p>  1.<code>cd /etc/yum.repos.d</code> 进入这个目录，里面有个文件dag.repo 文件(可能名称会不一样)里面的 <code>baseurl=http://apt.sw.be/redhat/el$releasever/en/$basearch/dag</code><br>  2.<code>vi</code> 编译一下里面的地址baseurl, 把后面的地址更换 我索性网上找到了有一篇文章<a href="https://blog.csdn.net/zhujiangm/article/details/42614105" target="_blank" rel="noopener">https://blog.csdn.net/zhujiangm/article/details/42614105</a>有很多个地址，然后就替换进去，不怕地址都用不了。 </p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> [dag]</span><br><span class="line"> name=Dag RPM Repository <span class="keyword">for</span> Red Hat Enterprise Linux</span><br><span class="line"> baseurl = http://archive.cs.uu.nl/mirror/dag.wieers/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag</span><br><span class="line">    http://apt.sw.be/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag</span><br><span class="line">    http://dag.linux.iastate.edu/dag/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag</span><br><span class="line">    http://ftp.riken.jp/Linux/dag/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag/</span><br><span class="line">    http://ftp2.lcpe.uni-sofia.bg/freshrpms/pub/dag/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag</span><br><span class="line"> http://ftp.heanet.ie/pub/freshrpms/pub/dag/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag</span><br><span class="line">    http://ftp-stud.fht-esslingen.de/dag/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag</span><br><span class="line">    http://mirror.cpsc.ucalgary.ca/mirror/dag/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag</span><br><span class="line">    http://mirrors.ircam.fr/pub/dag/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag</span><br><span class="line">    http://rh-mirror.linux.iastate.edu/pub/dag/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag</span><br><span class="line">    http://rpmfind.net/linux/dag/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag</span><br><span class="line">    http://wftp.tu-chemnitz.de/pub/linux/dag/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag</span><br><span class="line">    http://www.mirrorservice.org/sites/apt.sw.be/redhat/el<span class="variable">$releasever</span>/en/<span class="variable">$basearch</span>/dag</span><br><span class="line">gpgcheck=1</span><br><span class="line">enabled=1</span><br><span class="line">gpgkey=http://dag.wieers.com/rpm/packages/RPM-GPG-KEY.dag.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>服务器升级   <code>Error: Package: libgpod-0.8.3-7.el7.x86_64 (@epel)</code><br>解决办法： 先运行<code>yum downgrade libgpod</code> 然后报错就可以解决了</p>
+</li>
+<li><p>kill掉一个用户的所有进程</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">killall –u username</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">linux;server;update</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/19/servernote/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-awk使用笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -419,6 +506,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">生信分析日常</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">linux;server;update</a>
               </li>
             
             <div class="clearfix"></div>
