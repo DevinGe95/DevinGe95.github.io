@@ -9,18 +9,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>服务器管理与升级中遇到的问题 | Devin&#39;s bioinformatics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="服务器升级问题   1http://apt.sw.be/redhat/el6/en/x86_64/dag/repodata/repomd.xml: [Errno 14] PYCURL ERROR 6 - &quot;Couldn‘t resolve host ‘apt.sw.be‘&quot;    1.cd /etc/yum.repos.d 进入这个目录，里面有个文件dag.repo 文件(可能名称会不一样)里面">
+  <meta name="description" content="服务器升级R后Bioconductor的版本可能会导致不同，需要安装BioManager之后；运行   1Bioconductor::install(version = &quot;3.9&quot;)    对应Bioconductor 3.9版本  服务器升级问题   1http://apt.sw.be/redhat/el6/en/x86_64/dag/repodata/repomd.xml: [Errno 1">
 <meta name="keywords" content="linux;server;update">
 <meta property="og:type" content="article">
 <meta property="og:title" content="服务器管理与升级中遇到的问题">
 <meta property="og:url" content="http://yoursite.com/2019/07/19/servernote/index.html">
 <meta property="og:site_name" content="Devin&#39;s bioinformatics">
-<meta property="og:description" content="服务器升级问题   1http://apt.sw.be/redhat/el6/en/x86_64/dag/repodata/repomd.xml: [Errno 14] PYCURL ERROR 6 - &quot;Couldn‘t resolve host ‘apt.sw.be‘&quot;    1.cd /etc/yum.repos.d 进入这个目录，里面有个文件dag.repo 文件(可能名称会不一样)里面">
+<meta property="og:description" content="服务器升级R后Bioconductor的版本可能会导致不同，需要安装BioManager之后；运行   1Bioconductor::install(version = &quot;3.9&quot;)    对应Bioconductor 3.9版本  服务器升级问题   1http://apt.sw.be/redhat/el6/en/x86_64/dag/repodata/repomd.xml: [Errno 1">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-07-19T11:49:56.117Z">
+<meta property="og:updated_time" content="2019-07-19T11:50:30.002Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="服务器管理与升级中遇到的问题">
-<meta name="twitter:description" content="服务器升级问题   1http://apt.sw.be/redhat/el6/en/x86_64/dag/repodata/repomd.xml: [Errno 14] PYCURL ERROR 6 - &quot;Couldn‘t resolve host ‘apt.sw.be‘&quot;    1.cd /etc/yum.repos.d 进入这个目录，里面有个文件dag.repo 文件(可能名称会不一样)里面">
+<meta name="twitter:description" content="服务器升级R后Bioconductor的版本可能会导致不同，需要安装BioManager之后；运行   1Bioconductor::install(version = &quot;3.9&quot;)    对应Bioconductor 3.9版本  服务器升级问题   1http://apt.sw.be/redhat/el6/en/x86_64/dag/repodata/repomd.xml: [Errno 1">
   
     <link rel="alternative" href="/atom.xml" title="Devin&#39;s bioinformatics" type="application/atom+xml">
   
@@ -177,6 +177,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
+<li><p>服务器升级R后Bioconductor的版本可能会导致不同，需要安装BioManager之后；运行</p>
+  <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Bioconductor::install(version = <span class="string">"3.9"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>  对应Bioconductor 3.9版本</p>
+</li>
 <li><p>服务器升级问题</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://apt.sw.be/redhat/el6/en/x86_64/dag/repodata/repomd.xml: [Errno 14] PYCURL ERROR 6 - <span class="string">"Couldn‘t resolve host ‘apt.sw.be‘"</span></span><br></pre></td></tr></table></figure>
 
@@ -186,9 +191,7 @@
 <li><p>服务器升级   <code>Error: Package: libgpod-0.8.3-7.el7.x86_64 (@epel)</code><br>解决办法： 先运行<code>yum downgrade libgpod</code> 然后报错就可以解决了</p>
 </li>
 <li><p>kill掉一个用户的所有进程</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">killall –u username</span><br></pre></td></tr></table></figure>
-
-</li>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">killall –u username</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
