@@ -3,17 +3,18 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta name="google-site-verification" content="7UF9v525Xs-Ol_EhV2euiZsYIXKYYUpUh6utT_4t17o">
+  <meta name="baidu-site-verification" content="jFhCUMZOzN">
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="http://bio-devin.top">
   <title>服务器管理与升级中遇到的问题 | Devin&#39;s bioinformatics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="服务器升级R后Bioconductor的版本可能会导致不同，需要安装BioManager之后；运行   1Bioconductor::install(version = &quot;3.9&quot;)    对应Bioconductor 3.9版本  服务器升级问题   1http://apt.sw.be/redhat/el6/en/x86_64/dag/repodata/repomd.xml: [Errno 1">
 <meta name="keywords" content="linux,server,update">
 <meta property="og:type" content="article">
 <meta property="og:title" content="服务器管理与升级中遇到的问题">
-<meta property="og:url" content="http://yoursite.com/2019/07/19/servernote/index.html">
+<meta property="og:url" content="http://bio-devin.top/2019/07/19/servernote/index.html">
 <meta property="og:site_name" content="Devin&#39;s bioinformatics">
 <meta property="og:description" content="服务器升级R后Bioconductor的版本可能会导致不同，需要安装BioManager之后；运行   1Bioconductor::install(version = &quot;3.9&quot;)    对应Bioconductor 3.9版本  服务器升级问题   1http://apt.sw.be/redhat/el6/en/x86_64/dag/repodata/repomd.xml: [Errno 1">
 <meta property="og:locale" content="zh">
@@ -301,7 +302,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABzklEQVR42u3aQY7CMAwFUO5/aUZixWjU8m2noSO9rFCB5rULK/nO4xGP52u8f34fR7/5+/ujK4sHLi7umPs8HeeU6pXkkY4MuLi4+7l58crL1tGU53f7YMPFxb0Z93yJk0yWF0dcXNz/wu1tY6qvAxcX9z7cZPPTW7IkD3nJXg0XF3fA7QWmaz9fnu/i4uIu6kpUC0p1+vLsuLi4W7h5IyS5nges1UC2kLXg4uKOueebmerDzIOSDxstXFzcL3F7h66ShUvv/r+u4OLibuH2DlJUo8y8ZRI1aXBxcbdw82XHqlw2KWeFd4yLi3sZd9JEad46Xhgt7vng4uLGBy/m8ejkbUUPiYuLu4WblK18cTOJXxd0gXBxcRdx8zCieggjL2S4uLh35iYNj7xZkpTC6svCxcXdw60esFi7AMo3Rbi4uDu5z3isao3krVxcXNzvcqvBZb7oqZatqJDh4uJu4VbLWW8Dk5SwZicWFxd3KbfXzaw2bnN6/i0uLu7V3GrxystQXgTz7RAuLu5ObjUerQYcowNY8zQXFxf3Mu7aO/davLi4uHfm5s3RHBQ1cnBxcTdyqxNM/lWNQpp7NVxc3AF3HphWw5EEh4uL+yXuD6+8D/YxTcnEAAAAAElFTkSuQmCC" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3aQW7DMAwFUd//0i7QbRt5PmkHMDVadZFEelqwpMjjwOv8Xfwz54e1/rW/n7x5yZAh47WMc7k+bfzp0OvPr3fh1/EPVYYMGRsweADl4XjNI1cW7ChDhgwZy3TtBKsWrGXIkCGjH3CD1G0ZZNPrkyFDxp4MUsT2N+bJ4oO1uAwZMl7ISBsD3/z7wf6GDBkyXsI4w9VPCnmDMziVDBkyRjNIe5KPXNTKV54aXpxBhgwZ2zDWgbXzLd685M98MmTI2I3BS8dOiCQhuxj0ZciQsQGjP0jBATwZ5c1UGTJkTGV0AuVzAxZxK1SGDBmjGbxY7SDTYpi0CuJSVoYMGa9l9FM3HhY7D3YXJBkyZIxm8MEvngjWwm7aBpAhQ8Y+DJ451sJlGnz5LjJkyNiHwYNa/7ktbWfG/zFkyJAxlBGXiOGIBg/lnUJXhgwZsxlpYK2Vu50rCC5FhgwZQxn8IayWMqYPdsWiWoYMGaMZ6bAFL1Brh7vhuzJkyBjHSI+YBuj00Lz0PTo3LUOGjBcy+NN8jcEL4OJAhgwZMkYz0uf7dLSCJ3ydcCxDhozZjDNctXysdinBk5wMGTJGM/jiY2GdQbE0ZZQhQ8Y+DHKIGzJQMJxxQz9WhgwZoxn3blkb1Egf/mTIkCGj9ohfK1z5Y9zFtIgMGTJk4ECc/g65gosiWYYMGRswSJgjQZC3E2qDZagTK0OGjHGMTgFZA6RtAJ6AypAhYxzjBxez+gg/IcuaAAAAAElFTkSuQmCC" alt="微信分享二维码">
     </div>
 </div>
 

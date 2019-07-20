@@ -3,17 +3,18 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta name="google-site-verification" content="7UF9v525Xs-Ol_EhV2euiZsYIXKYYUpUh6utT_4t17o">
+  <meta name="baidu-site-verification" content="jFhCUMZOzN">
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="http://bio-devin.top">
   <title>生信分析日常笔记 | Devin&#39;s bioinformatics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Annovar注释优先级：需要注意的是，如果该变异找到多种注释，ANNOVAR将会对它进行比较，以exonic = splicing &amp;gt; ncRNA &amp;gt; UTR5/UTR3 &amp;gt; intron &amp;gt; upstream/downstream &amp;gt; intergenic 的优先权重，取最优的表示，如果你想ANNOVAR列出该变异所有注释，可以使用–separate参数 MuT">
 <meta name="keywords" content="生信分析日常">
 <meta property="og:type" content="article">
 <meta property="og:title" content="生信分析日常笔记">
-<meta property="og:url" content="http://yoursite.com/2019/07/17/生信分析日常/index.html">
+<meta property="og:url" content="http://bio-devin.top/2019/07/17/生信分析日常/index.html">
 <meta property="og:site_name" content="Devin&#39;s bioinformatics">
 <meta property="og:description" content="Annovar注释优先级：需要注意的是，如果该变异找到多种注释，ANNOVAR将会对它进行比较，以exonic = splicing &amp;gt; ncRNA &amp;gt; UTR5/UTR3 &amp;gt; intron &amp;gt; upstream/downstream &amp;gt; intergenic 的优先权重，取最优的表示，如果你想ANNOVAR列出该变异所有注释，可以使用–separate参数 MuT">
 <meta property="og:locale" content="zh">
@@ -280,7 +281,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIUlEQVR42u3ay27DMAwEwPz/T6fXAIXdXdEuEHl8CgK/xoeFSPH1io/3x/H5z9r5R9f+vuriAwMD42sZ79Pj/AH5g/P7n/9/+EQMDIwHMI4efHTOOawN1rVoxsDAwDi/dRSCcZi2C1AMDAyMPPiSGJ28OgYGBkZbxCYxetXnuLEWx8DA+EJG3nX//9+37G9gYGB8FeNdHvOWXLIQrN8KAwNja8ZagbrWILs2cDEwMDDy8Yh2hdYC8rjHwMDYlbE2BJYv+9bGL2owBgbGAxhJMZkXnAl4jXQYxBgYGFszktZYMujQturaAYui3MXAwNiOkYfaYvwFAZoEfTEQhoGB8QDGpEHfBm47FlYELgYGxkaMawfC2iK2XW7moYyBgbETYxJta5sESUy3MAwMjL0Za2HXNt0mwV00/jAwMDZlFC2t+zYd44GwaNgCAwPjYYx26da+7uScxa+LgYHxhYw8OhdvF5S4bRcweisMDIxNGZPtxkmhm5e40VthYGBsymgbYZPSdz7MEXUNMTAwNmW00xnJtmWLH43SYmBgPJJxX3Fbz6blkyMYGBjbMd7l0W43rm1q1qMeGBgYWzMmMZePcyWf4KqiFwMDY1fGfLTi/CVy5GgZioGB8QDG4nRG3Car22flszAwMDDaInbyUUbTIhgYGBjB73xDdDK0eri/gYGBsTWjbahNzlwL3D/ug4GBsTVjVDrG7f47tjwxMDAewPgBukED8XGdGAEAAAAASUVORK5CYII=" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACOElEQVR42u3awW7EIAyE4X3/l06lnipFwIyHrYT5OUUrmvBxcMH25yOP53e8f/k73r+P5s/f856zbcCAAeNYxjMdb8boecQeLd3dlAUVBgwYFzBqS3HD6Hw75nMWa4YBAwYMORRKn5SDOAwYMGAkn9GvqbUADQMGDBi1Y5y7COUS6x4ZN9zFYcCAcSDDLQz85/MX6xswYMA4hPEEo1YGqAX3xV/BgAGjNUO5fObtF+4xVDkyLsIuDBgw2jGShJdyZc1bLqJjIgwYMA5nzI9lyuKStgxlodImwoAB4wKGGwSVVL4eCWvv2RDLYcCA0YJRS+LXZuqMYaINBgwYrRlJ64NeAPhGss844cKAAeNYhn0IMz+c5P/0DYUBA0ZvRl4ASI6PepvFIojDgAGjNUNPyteWpcyvFQkMDAwYMFow3MCnFy/d5FoSxGHAgNGVUWsn1dNzSSg32lthwIBxJUNvCFMinrtNUX0DBgwY7Rhucq32UjehtuEWDgMGjAsY+jGu2MhlHhbt8gAMGDDaMfS0mhsi3U1xL8zSEmHAgNGIUUv3u4uupe02/6+AAQPGgQy3YSJfrr5ByqbDgAGjN6OWyq+B8/cPvwUDBozWjFqY08uQ7nMyEwYMGL0ZehB0z5s6dUPAhQEDxgWMvKyoh2Mjfea2gsGAAQOGEEbdQKlfZe1WMBgwYFzJSAoGSQkhKnzAgAGjEcNN1ivXV6WE4JY8je42GDBgNGLUgnLeKlFL6tUuwDBgwDiW8QMqO/oIKyV1uQAAAABJRU5ErkJggg==" alt="微信分享二维码">
     </div>
 </div>
 

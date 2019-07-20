@@ -3,17 +3,18 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta name="google-site-verification" content="7UF9v525Xs-Ol_EhV2euiZsYIXKYYUpUh6utT_4t17o">
+  <meta name="baidu-site-verification" content="jFhCUMZOzN">
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="http://bio-devin.top">
   <title>awk使用笔记 | Devin&#39;s bioinformatics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="使用awk为文件每一行添加Sample名字   1awk -F &apos;\t&apos; &apos;&amp;#123;print $0, SampleID&amp;#125;&apos; 操作文件  如何使用awk 调用Shell变量变量跳过文件首行，输出文件的每一行 1for i in `cat name.txt`; do awk -F &apos;\t&apos; &apos;NR&amp;gt;1&amp;#123;print $0,  &quot;\t&apos;$i&apos;&quot;&amp;#125;&apos; $i.hg3">
 <meta name="keywords" content="awk,linux,bioinformatics">
 <meta property="og:type" content="article">
 <meta property="og:title" content="awk使用笔记">
-<meta property="og:url" content="http://yoursite.com/2019/07/17/awk使用笔记/index.html">
+<meta property="og:url" content="http://bio-devin.top/2019/07/17/awk使用笔记/index.html">
 <meta property="og:site_name" content="Devin&#39;s bioinformatics">
 <meta property="og:description" content="使用awk为文件每一行添加Sample名字   1awk -F &apos;\t&apos; &apos;&amp;#123;print $0, SampleID&amp;#125;&apos; 操作文件  如何使用awk 调用Shell变量变量跳过文件首行，输出文件的每一行 1for i in `cat name.txt`; do awk -F &apos;\t&apos; &apos;NR&amp;gt;1&amp;#123;print $0,  &quot;\t&apos;$i&apos;&quot;&amp;#125;&apos; $i.hg3">
 <meta property="og:locale" content="zh">
@@ -298,7 +299,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACM0lEQVR42u3aQZKDMAwF0dz/0kzVrLIgTn8JZgq5vaJIAn5eKLKl1wuP43es77zf//T99/vHcrzuGDJkyHgsgzzu0zW5Q6a1fi+iypAhYwPGOsh2JtpZJjI3GTJkyFgHRAKrBV8ZMmTI6AfcNZUnf//8vyFDhoxHMUjqxiddOxkjgf6CvbgMGTIeyEgLA395fWN9Q4YMGQ9hHI2xDsR8M5wWA05+JUOGjNGMfpKXJnC1TS8KxDJkyBjKSDeQVyWX15ZFZciQIYNPaz25qxrOigFXhgwZ4xjpJraT/JFffQn6MmTI2IBxd9GRPKG2xDJkyNiB0akDrkMheSVfjmAhZMiQMY6RbhrTAzgeWFthV4YMGZsx+KTT9ot+svhxaWTIkDGawY/JeAGSPyfuCiFBX4YMGUMZ1xYy0zIACcoIKUOGjKEMkval7RScxA/jvjxZhgwZoxlpqZKE3VrKmA4ZMmTsw+DbSx6Ia41iPLyeXMuQIWM0oxN205QunWgaxGXIkDGbQUJYp3nrqoQyyBZlyJAxlEHStbS0WSuC1hZahgwZsxlpowN5DS9J1hrCUM+IDBkyRjCOcKRhlBcJ0saLk1NDGTJkDGX0K5/8QbUWjbR0IUOGjKmMWpDthELyafwWGTJkbMDoHNzzhtRiSkeWT4YMGTLCF6dHbOkyBeeFMmTI2IxRa6FYN2TwfXaxeClDhoxBDLKJ5U2raQtsbfMsQ4aMfRi1VI8f39fY/dAvQ4aMEYwfkpt0cnjsigUAAAAASUVORK5CYII=" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3aQY7CMAwFUO5/aWaLNEP534GRSF5WqLRNXhdWbOd2i8f9YTxemd3/+9/r628bGBgYX8u4X478nvZDXL+5nhcDA+MAxrOJk99JMF2JkNdrw8DAwLheejJ9Hmqv58XAwMCYBdwkcU2utKkyBgbGmYxZAG03he0SP5KLY2BgfCEjL5b9/++P9DcwMDC+inEvx/XmLGlJtqX/aFUYGBhbM/IAN+O9t8T2oiGKgYGxKaNNTWeNzPaddUMUAwPjAEaypUtK83kIThoA+T0YGBinMdoSfF4+e1eqjIGBcSZj1h5oN4gtKU+nMTAwzmG028SlicvCXN1fxcDA2IjRJpY54BPNgxfPYmBgbMqYBcp8m7jSIs0/JQYGxjmMNkFtj4glT+WNh6enRTAwMDZlrGDaYxMrifTTKxgYGMcw1lPN9ujY+of4oxOLgYGxHWNWb8+3ibP0NW85FAMDA2NTRls+W2mCtoEeAwPjZMZ6eJ0dC0sWWgRiDAyM7RjvKoqttzbbVLbocmBgYGzBaF+ab+zaktysPIeBgXEOI3npSn68UlZ78RQGBsamjHs58uNceWhuD3BEhy0wMDA2YswamflkbeDOk95hgxMDA+NrGetBNp+yLecVa8DAwDiA0R7wyhuNbZtz9rEwMDAwEkYSUoftydaHgYGBUR4Iy8GzZioGBsY5jHZLt7IdLPqrK51YDAyMjRiz1LFtQCZ7uZW2AQYGxqaMHzkj8C7wKZVdAAAAAElFTkSuQmCC" alt="微信分享二维码">
     </div>
 </div>
 
