@@ -222,7 +222,11 @@
         
         <tags>
             
-            <tag> linux;server;update </tag>
+            <tag> linux </tag>
+            
+            <tag> server </tag>
+            
+            <tag> update </tag>
             
         </tags>
         
@@ -250,7 +254,11 @@
         
         <tags>
             
-            <tag> awk linux bioinformatics </tag>
+            <tag> awk </tag>
+            
+            <tag> linux </tag>
+            
+            <tag> bioinformatics </tag>
             
         </tags>
         
