@@ -39,9 +39,13 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件</span><br><span class="line">    选择执行的语句</span><br></pre></td></tr></table></figure>
 
 <p>  <code>if</code>内部的语句需要有一个统一的缩进（就是指每一行开头的空格），一般用四个空格。缩进表示这些代码属于这个<code>if</code>条件内部，是一个“代码块”。Python用这种方法替代了其他语言的<code>{}</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">    age = int(input())</span><br><span class="line">    <span class="keyword">if</span> age &gt; = <span class="number">18</span>:</span><br><span class="line">        print(<span class="string">"你是个成年人了！"</span>)</span><br><span class="line">```  </span><br><span class="line">```python</span><br><span class="line">    num =<span class="number">10</span></span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'Guess what I think?'</span>) </span><br><span class="line">    answer = int(input()) </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> answer&lt;num: </span><br><span class="line">        <span class="keyword">print</span> (<span class="string">'too small!'</span>) </span><br><span class="line">    <span class="keyword">if</span> answer&gt;num: </span><br><span class="line">        <span class="keyword">print</span> (<span class="string">'too big!'</span>) </span><br><span class="line">    <span class="keyword">if</span> answer==num: </span><br><span class="line">        <span class="keyword">print</span> (<span class="string">'BINGO!'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">age = int(input())</span><br><span class="line"><span class="keyword">if</span> age &gt; = <span class="number">18</span>:</span><br><span class="line">    print(<span class="string">"你是个成年人了！"</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">num =<span class="number">10</span></span><br><span class="line"><span class="keyword">print</span> (<span class="string">'Guess what I think?'</span>) </span><br><span class="line">answer = int(input()) </span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> answer&lt;num: </span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'too small!'</span>) </span><br><span class="line"><span class="keyword">if</span> answer&gt;num: </span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'too big!'</span>) </span><br><span class="line"><span class="keyword">if</span> answer==num: </span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'BINGO!'</span>)</span><br></pre></td></tr></table></figure>
 
 <p> <code>if</code>在编程语言中被称为“<strong>控制流语句</strong>”，用来控制程序的执行顺序。</p>
+<a id="more"></a>
+
 <blockquote>
 <h3 id="While"><a href="#While" class="headerlink" title="While"></a><strong>While</strong></h3></blockquote>
 <hr>
@@ -273,7 +277,7 @@
 
 </li>
 </ul>
-]]></content>
+<a id="more"></a>]]></content>
       
         
         <tags>
@@ -292,8 +296,12 @@
       <title><![CDATA[生信分析日常笔记]]></title>
       <url>/2019/07/17/%E7%94%9F%E4%BF%A1%E5%88%86%E6%9E%90%E6%97%A5%E5%B8%B8/</url>
       <content type="html"><![CDATA[<ul>
-<li>Annovar注释优先级：需要注意的是，如果该变异找到多种注释，ANNOVAR将会对它进行比较，以exonic = splicing &gt; ncRNA &gt; UTR5/UTR3 &gt; intron &gt; upstream/downstream &gt; intergenic 的优先权重，取最优的表示，如果你想ANNOVAR列出该变异所有注释，可以使用–separate参数</li>
-<li>MuTect2默认参数设置很严格，<code>max_alt_alleles_in_normal_count</code> 默认为1，也就是白细胞里只要发现1个变异，MuTect2就会认为该变异不属于somatic变异，并将其扔掉，试想10000层的深度，那还不全扔掉啊！这里推荐<code>max_alt_alleles_in_normal_count</code>参数设置为1000。同理，<code>max_alt_allele_in_normal_fraction</code>默认为0.03，建议改为0.1，这样就能保证即使1000起不到作用的时候（比如测序深度&lt;1000层），也可以通过0.1过滤。</li>
+<li><p>Annovar注释优先级：需要注意的是，如果该变异找到多种注释，ANNOVAR将会对它进行比较，以exonic = splicing &gt; ncRNA &gt; UTR5/UTR3 &gt; intron &gt; upstream/downstream &gt; intergenic 的优先权重，取最优的表示，如果你想ANNOVAR列出该变异所有注释，可以使用–separate参数</p>
+</li>
+<li><p>MuTect2默认参数设置很严格，<code>max_alt_alleles_in_normal_count</code> 默认为1，也就是白细胞里只要发现1个变异，MuTect2就会认为该变异不属于somatic变异，并将其扔掉，试想10000层的深度，那还不全扔掉啊！这里推荐<code>max_alt_alleles_in_normal_count</code>参数设置为1000。同理，<code>max_alt_allele_in_normal_fraction</code>默认为0.03，建议改为0.1，这样就能保证即使1000起不到作用的时候（比如测序深度&lt;1000层），也可以通过0.1过滤。</p>
+<a id="more"></a>
+
+</li>
 </ul>
 ]]></content>
       
