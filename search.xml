@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[常用生物学、肿瘤学知识]]></title>
-      <url>/biology-knowledge.html</url>
+      <url>/blog/biology-knowledge.html</url>
       <content type="html"><![CDATA[<h1 id="常用生物学、肿瘤学知识"><a href="#常用生物学、肿瘤学知识" class="headerlink" title="常用生物学、肿瘤学知识"></a>常用生物学、肿瘤学知识</h1><ul>
 <li><p>5’ UTR，3’ UTR 叫作 untranslated region ,而 introns 叫作 non-coding RNA。一段基因序列上包含外显子和内含子，转录的时候，pre-RNA就是前体RAN上会有内含子和外显子，成为成熟RNA时，内含子已经被剪切了，只保留外显子，所以内含子叫作非编码RNA（non-coding RNA）。但成熟的RNA上也是有一部分序列并不翻译成蛋白质，就是非翻译区域（untranslated region），包括上游的 5’ UTR，下游的3’ UTR。<img src="C:%5CUsers%5Cgedon%5CDocuments%5C%E6%9C%AA%E5%91%BD%E5%90%8D%E5%9B%BE%E7%89%87.png" alt="未命名图片"></p>
 </li>
@@ -28,7 +28,7 @@
     
     <entry>
       <title><![CDATA[Python3学习入门]]></title>
-      <url>/Python3.html</url>
+      <url>/blog/Python3.html</url>
       <content type="html"><![CDATA[<h1 id="Python3"><a href="#Python3" class="headerlink" title="Python3"></a>Python3</h1><h2 id="python3入门-practice"><a href="#python3入门-practice" class="headerlink" title="python3入门 practice"></a>python3入门 practice</h2><ul>
 <li><strong>Python3 <code>Input()</code></strong> 拿到的是字符而不是数字<blockquote>
 <h3 id="IF"><a href="#IF" class="headerlink" title="IF"></a><strong>IF</strong></h3></blockquote>
@@ -227,7 +227,7 @@
     
     <entry>
       <title><![CDATA[服务器管理与升级中遇到的问题]]></title>
-      <url>/servernote.html</url>
+      <url>/blog/servernote.html</url>
       <content type="html"><![CDATA[<ul>
 <li><p>服务器升级R后Bioconductor的版本可能会导致不同，需要安装BioManager之后；运行</p>
   <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Bioconductor::install(version = <span class="string">"3.9"</span>)</span><br></pre></td></tr></table></figure>
@@ -268,7 +268,7 @@
     
     <entry>
       <title><![CDATA[awk使用笔记]]></title>
-      <url>/awk%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0.html</url>
+      <url>/blog/awk%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0.html</url>
       <content type="html"><![CDATA[<ul>
 <li><p>使用<code>awk</code>为文件每一行添加Sample名字</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F <span class="string">'\t'</span> <span class="string">'&#123;print $0, SampleID&#125;'</span> 操作文件</span><br></pre></td></tr></table></figure>
@@ -300,7 +300,7 @@
     
     <entry>
       <title><![CDATA[生信分析日常笔记]]></title>
-      <url>/%E7%94%9F%E4%BF%A1%E5%88%86%E6%9E%90%E6%97%A5%E5%B8%B8.html</url>
+      <url>/blog/%E7%94%9F%E4%BF%A1%E5%88%86%E6%9E%90%E6%97%A5%E5%B8%B8.html</url>
       <content type="html"><![CDATA[<ul>
 <li><p>Annovar注释优先级：需要注意的是，如果该变异找到多种注释，ANNOVAR将会对它进行比较，以exonic = splicing &gt; ncRNA &gt; UTR5/UTR3 &gt; intron &gt; upstream/downstream &gt; intergenic 的优先权重，取最优的表示，如果你想ANNOVAR列出该变异所有注释，可以使用–separate参数</p>
 </li>
