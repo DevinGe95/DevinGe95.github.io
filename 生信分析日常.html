@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="Devin的生信博客">
 <meta property="og:description" content="Annovar注释优先级：需要注意的是，如果该变异找到多种注释，ANNOVAR将会对它进行比较，以exonic = splicing &amp;gt; ncRNA &amp;gt; UTR5/UTR3 &amp;gt; intron &amp;gt; upstream/downstream &amp;gt; intergenic 的优先权重，取最优的表示，如果你想ANNOVAR列出该变异所有注释，可以使用–separate参数  Mu">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-07-20T11:47:44.511Z">
+<meta property="og:updated_time" content="2019-08-03T02:56:31.708Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="生信分析日常笔记">
 <meta name="twitter:description" content="Annovar注释优先级：需要注意的是，如果该变异找到多种注释，ANNOVAR将会对它进行比较，以exonic = splicing &amp;gt; ncRNA &amp;gt; UTR5/UTR3 &amp;gt; intron &amp;gt; upstream/downstream &amp;gt; intergenic 的优先权重，取最优的表示，如果你想ANNOVAR列出该变异所有注释，可以使用–separate参数  Mu">
@@ -181,7 +181,12 @@
 </li>
 <li><p>MuTect2默认参数设置很严格，<code>max_alt_alleles_in_normal_count</code> 默认为1，也就是白细胞里只要发现1个变异，MuTect2就会认为该变异不属于somatic变异，并将其扔掉，试想10000层的深度，那还不全扔掉啊！这里推荐<code>max_alt_alleles_in_normal_count</code>参数设置为1000。同理，<code>max_alt_allele_in_normal_fraction</code>默认为0.03，建议改为0.1，这样就能保证即使1000起不到作用的时候（比如测序深度&lt;1000层），也可以通过0.1过滤。</p>
 <a id="more"></a>
-
+</li>
+<li><p>Soft Clip，是指虽然比对不到基因组，但是还是存在于SEQ (segment SEQuence)中的序列，此时CIGAR列对应的S(Soft)的符号。直白点说，就是虽然比对不上参考基因组，但是在BAM/SAM文件中的reads上还是存在的序列（并没有被截断扔掉的序列）。  </p>
+</li>
+<li><p>Hard Clip，同样的，就表示比对不上并且不会存在于SAM/BAM文件中的序列（被截断扔掉了的序列，此时CIGAR列会留下H(Hard)的符号，但是序列的那一列却没有对应的序列了）。</p>
+</li>
+<li><h4 id="为什么会产生Clip"><a href="#为什么会产生Clip" class="headerlink" title="为什么会产生Clip"></a><strong>为什么会产生Clip</strong></h4><p>知道了Clip的含义，再先理解一下Soft Clip，即只要一条序列上，两端有比对不上的序列部分，就是Soft Clip，这个一条序列上有比对不上的部分的现象是必然存在的（比如结构变异的断点的部分），这种两端比对不上的read的特殊的表示方法，就是Soft Clip。Soft Clip是可以独立存在的。<br>而Hard Clip，相对来说更特殊一点，是依赖于Soft Clip存在的。也就是有Soft Clip不一定有Hard Clip，而有Hard Clip则一定有Soft Clip。Hard Clip存在的本意，是减少BAM文件序列的冗余度，比如有一条read，它能比对到A，B两个地方，在A地方，是60M90S，在B地方是60H90M，此时一条read其实已经在A位置有了完整的序列信息，在B位置的信息其实是冗余的，所以在B位置可以引入Hard Clip这样一个标记形式，就能把B位置的序列标记为secondary。</p>
 </li>
 </ul>
 
