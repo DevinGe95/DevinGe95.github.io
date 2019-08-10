@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title><![CDATA[LINUX使用笔记]]></title>
+      <url>/linux%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0.html</url>
+      <content type="html"><![CDATA[<ol>
+<li><p>使用Vim对多行代码进行注释</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl】+【V】进入列编辑模式，向下或向上移动光标，把需要注释的行的开头标记起来，然后按大写的I（【Shift】+【I】），再插入注释符，比如<span class="string">"//"</span>，再按Esc，即可全部注释。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用Vim，批量去掉注释：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">【Ctrl】+【V】，进入列编辑模式，横向选中列的个数（如<span class="string">"//"</span>注释符号，需要选中两列），然后按【D】，就会删除注释符号</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[常用生物学、肿瘤学知识]]></title>
       <url>/biology-knowledge.html</url>
       <content type="html"><![CDATA[<h1 id="常用生物学、肿瘤学知识"><a href="#常用生物学、肿瘤学知识" class="headerlink" title="常用生物学、肿瘤学知识"></a>常用生物学、肿瘤学知识</h1><ul>
