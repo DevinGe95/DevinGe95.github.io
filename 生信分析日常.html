@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="Devin的生信博客">
 <meta property="og:description" content="Annovar注释优先级：需要注意的是，如果该变异找到多种注释，ANNOVAR将会对它进行比较，以exonic = splicing &amp;gt; ncRNA &amp;gt; UTR5/UTR3 &amp;gt; intron &amp;gt; upstream/downstream &amp;gt; intergenic 的优先权重，取最优的表示，如果你想ANNOVAR列出该变异所有注释，可以使用–separate参数  Mu">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-08-03T02:56:31.708Z">
+<meta property="og:updated_time" content="2019-08-16T07:43:06.438Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="生信分析日常笔记">
 <meta name="twitter:description" content="Annovar注释优先级：需要注意的是，如果该变异找到多种注释，ANNOVAR将会对它进行比较，以exonic = splicing &amp;gt; ncRNA &amp;gt; UTR5/UTR3 &amp;gt; intron &amp;gt; upstream/downstream &amp;gt; intergenic 的优先权重，取最优的表示，如果你想ANNOVAR列出该变异所有注释，可以使用–separate参数  Mu">
@@ -188,7 +188,17 @@
 </li>
 <li><h4 id="为什么会产生Clip"><a href="#为什么会产生Clip" class="headerlink" title="为什么会产生Clip"></a><strong>为什么会产生Clip</strong></h4><p>知道了Clip的含义，再先理解一下Soft Clip，即只要一条序列上，两端有比对不上的序列部分，就是Soft Clip，这个一条序列上有比对不上的部分的现象是必然存在的（比如结构变异的断点的部分），这种两端比对不上的read的特殊的表示方法，就是Soft Clip。Soft Clip是可以独立存在的。<br>而Hard Clip，相对来说更特殊一点，是依赖于Soft Clip存在的。也就是有Soft Clip不一定有Hard Clip，而有Hard Clip则一定有Soft Clip。Hard Clip存在的本意，是减少BAM文件序列的冗余度，比如有一条read，它能比对到A，B两个地方，在A地方，是60M90S，在B地方是60H90M，此时一条read其实已经在A位置有了完整的序列信息，在B位置的信息其实是冗余的，所以在B位置可以引入Hard Clip这样一个标记形式，就能把B位置的序列标记为secondary。</p>
 </li>
+<li><p>提取bam/sam文件指定区域reads</p>
+<p>首先准备一个区域信息文件。region.bed #第一列为染色体ID，第二三列分别为起始终止位置 </p>
+<p>​              例： 12  21100  41200  #取12号染色体21100-41200区间的序列</p>
+</li>
 </ul>
+<p>  之后如果是sam文件,先转成bam文件：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">samtools view -Sb  reads.sam &gt;  reads.bam</span><br></pre></td></tr></table></figure>
+
+<p>  然后就可以使用bedtools来提取reads啦，命令如下：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bedtools  intersect  -a  reads.bam -b  region.bed &gt; target_reads.bam</span><br></pre></td></tr></table></figure>
+
 
       
 
