@@ -3,31 +3,43 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta name="google-site-verification" content="7UF9v525Xs-Ol_EhV2euiZsYIXKYYUpUh6utT_4t17o">
-  <meta name="baidu-site-verification" content="jFhCUMZOzN">
-  <% var title="page.title;" if (is_archive()){ ; (is_month()){ +=": " page.year ' page.month; } else (is_year()){ page.year; (is_category()){ page.category; (is_tag()){ page.tag; %>
+  
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="dns-prefetch" href="<%= config.url %>">
-  <title><% if (title){ %><%= title %> | <% } %><%= config.title %></%=></%></%=></%></title>
+  <link rel="dns-prefetch" href="http://bio-devin.top">
+  <title>LINUX使用笔记 | Devin的生信博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
-  <% if (theme.rss){ %>
-    <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
-  <% } %>
-  <% if (theme.favicon){ %>
-    <link rel="icon" href="<%- theme.favicon %>">
-  <% } %>
-  <%- partial('css') %>
+  <meta name="description" content="使用Vim对多行代码进行注释 1【Ctrl】+【V】进入列编辑模式，向下或向上移动光标，把需要注释的行的开头标记起来，然后按大写的I（【Shift】+【I】），再插入注释符，比如&quot;//&quot;，再按Esc，即可全部注释。  使用Vim，批量去掉注释： 1【Ctrl】+【V】，进入列编辑模式，横向选中列的个数（如&quot;//&quot;注释符号，需要选中两列），然后按【D】，就会删除注释符号  Vim取消搜索后的高亮：">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LINUX使用笔记">
+<meta property="og:url" content="http://bio-devin.top/linux使用笔记.html">
+<meta property="og:site_name" content="Devin的生信博客">
+<meta property="og:description" content="使用Vim对多行代码进行注释 1【Ctrl】+【V】进入列编辑模式，向下或向上移动光标，把需要注释的行的开头标记起来，然后按大写的I（【Shift】+【I】），再插入注释符，比如&quot;//&quot;，再按Esc，即可全部注释。  使用Vim，批量去掉注释： 1【Ctrl】+【V】，进入列编辑模式，横向选中列的个数（如&quot;//&quot;注释符号，需要选中两列），然后按【D】，就会删除注释符号  Vim取消搜索后的高亮：">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-08-12T02:31:19.496Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LINUX使用笔记">
+<meta name="twitter:description" content="使用Vim对多行代码进行注释 1【Ctrl】+【V】进入列编辑模式，向下或向上移动光标，把需要注释的行的开头标记起来，然后按大写的I（【Shift】+【I】），再插入注释符，比如&quot;//&quot;，再按Esc，即可全部注释。  使用Vim，批量去掉注释： 1【Ctrl】+【V】，进入列编辑模式，横向选中列的个数（如&quot;//&quot;注释符号，需要选中两列），然后按【D】，就会删除注释符号  Vim取消搜索后的高亮：">
+  
+    <link rel="alternative" href="/atom.xml" title="Devin的生信博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
-  <% var defaultCtnBg = 'linear-gradient(200deg,#a0cfe4,#e8c37e)' %>
+  
     #container.show {
-      background: <%= theme.style && theme.style.slider ? theme.style.slider : defaultCtnBg %>;
+      background: linear-gradient(200deg,#ccc,#000);
     }
   </style>
-  <%- partial('google-analytics') %>
-  <%- partial('baidu-analytics') %>
-</%-></%-></%-></%></%></%></%></%-></%></head>
+  
 
+  
+
+</head>
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -141,7 +153,7 @@
       <div id="wrapper" class="body-wrap">
         <div class="menu-l">
           <div class="canvas-wrap">
-            <canvas data-colors="#eaeaea" data-sectionheight="100" data-contentid="js-content" id="myCanvas1" class="anm-canvas"></canvas>
+            <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
             <article id="post-linux使用笔记" class="article article-type-post " itemscope itemprop="blogPost">
@@ -460,7 +472,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
