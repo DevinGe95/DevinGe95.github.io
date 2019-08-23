@@ -3,43 +3,31 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta name="google-site-verification" content="7UF9v525Xs-Ol_EhV2euiZsYIXKYYUpUh6utT_4t17o">
-  
+  <meta name="baidu-site-verification" content="jFhCUMZOzN">
+  <% var title="page.title;" if (is_archive()){ ; (is_month()){ +=": " page.year ' page.month; } else (is_year()){ page.year; (is_category()){ page.category; (is_tag()){ page.tag; %>
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="dns-prefetch" href="http://bio-devin.top">
-  <title>生信分析日常笔记 | Devin的生信博客</title>
+  <link rel="dns-prefetch" href="<%= config.url %>">
+  <title><% if (title){ %><%= title %> | <% } %><%= config.title %></%=></%></%=></%></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Annovar注释优先级：需要注意的是，如果该变异找到多种注释，ANNOVAR将会对它进行比较，以exonic = splicing &amp;gt; ncRNA &amp;gt; UTR5/UTR3 &amp;gt; intron &amp;gt; upstream/downstream &amp;gt; intergenic 的优先权重，取最优的表示，如果你想ANNOVAR列出该变异所有注释，可以使用–separate参数  Mu">
-<meta name="keywords" content="生信分析日常">
-<meta property="og:type" content="article">
-<meta property="og:title" content="生信分析日常笔记">
-<meta property="og:url" content="http://bio-devin.top/生信分析日常.html">
-<meta property="og:site_name" content="Devin的生信博客">
-<meta property="og:description" content="Annovar注释优先级：需要注意的是，如果该变异找到多种注释，ANNOVAR将会对它进行比较，以exonic = splicing &amp;gt; ncRNA &amp;gt; UTR5/UTR3 &amp;gt; intron &amp;gt; upstream/downstream &amp;gt; intergenic 的优先权重，取最优的表示，如果你想ANNOVAR列出该变异所有注释，可以使用–separate参数  Mu">
-<meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-08-16T07:43:06.438Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="生信分析日常笔记">
-<meta name="twitter:description" content="Annovar注释优先级：需要注意的是，如果该变异找到多种注释，ANNOVAR将会对它进行比较，以exonic = splicing &amp;gt; ncRNA &amp;gt; UTR5/UTR3 &amp;gt; intron &amp;gt; upstream/downstream &amp;gt; intergenic 的优先权重，取最优的表示，如果你想ANNOVAR列出该变异所有注释，可以使用–separate参数  Mu">
-  
-    <link rel="alternative" href="/atom.xml" title="Devin的生信博客" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
+  <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
+  <% if (theme.rss){ %>
+    <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
+  <% } %>
+  <% if (theme.favicon){ %>
+    <link rel="icon" href="<%- theme.favicon %>">
+  <% } %>
+  <%- partial('css') %>
   <style type="text/css">
-  
+  <% var defaultCtnBg = 'linear-gradient(200deg,#a0cfe4,#e8c37e)' %>
     #container.show {
-      background: linear-gradient(200deg,#ccc,#000);
+      background: <%= theme.style && theme.style.slider ? theme.style.slider : defaultCtnBg %>;
     }
   </style>
-  
+  <%- partial('google-analytics') %>
+  <%- partial('baidu-analytics') %>
+</%-></%-></%-></%></%></%></%></%-></%></head>
 
-  
-
-</head>
-</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -153,7 +141,7 @@
       <div id="wrapper" class="body-wrap">
         <div class="menu-l">
           <div class="canvas-wrap">
-            <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
+            <canvas data-colors="#eaeaea" data-sectionheight="100" data-contentid="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
             <article id="post-生信分析日常" class="article article-type-post " itemscope itemprop="blogPost">
@@ -199,6 +187,15 @@
 <p>  然后就可以使用bedtools来提取reads啦，命令如下：</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bedtools  intersect  -a  reads.bam -b  region.bed &gt; target_reads.bam</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li><p>如何将多个病人的maf文件合成一个：</p>
+<p>先生成maf首行，然后append</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat *.maf | egrep <span class="string">"^#|^Hugo_Symbol"</span> | head -2 &gt; allsamples.vep.maf</span><br><span class="line">cat *.maf | egrep -v <span class="string">"^#|^Hugo_Symbol"</span> &gt;&gt; allsamples.vep.maf</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
 
       
 
@@ -485,7 +482,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

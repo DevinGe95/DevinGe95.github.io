@@ -460,6 +460,15 @@
 <p>  然后就可以使用bedtools来提取reads啦，命令如下：</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bedtools  intersect  -a  reads.bam -b  region.bed &gt; target_reads.bam</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li><p>如何将多个病人的maf文件合成一个：</p>
+<p>先生成maf首行，然后append</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat *.maf | egrep <span class="string">"^#|^Hugo_Symbol"</span> | head -2 &gt; allsamples.vep.maf</span><br><span class="line">cat *.maf | egrep -v <span class="string">"^#|^Hugo_Symbol"</span> &gt;&gt; allsamples.vep.maf</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
 ]]></content>
       
         
