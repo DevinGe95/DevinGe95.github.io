@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="Devin的生信博客">
 <meta property="og:description" content="使用Vim对多行代码进行注释 1【Ctrl】+【V】进入列编辑模式，向下或向上移动光标，把需要注释的行的开头标记起来，然后按大写的I（【Shift】+【I】），再插入注释符，比如&quot;//&quot;，再按Esc，即可全部注释。  使用Vim，批量去掉注释： 1【Ctrl】+【V】，进入列编辑模式，横向选中列的个数（如&quot;//&quot;注释符号，需要选中两列），然后按【D】，就会删除注释符号  Vim取消搜索后的高亮：">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-08-12T02:31:19.496Z">
+<meta property="og:updated_time" content="2019-09-18T09:14:35.978Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LINUX使用笔记">
 <meta name="twitter:description" content="使用Vim对多行代码进行注释 1【Ctrl】+【V】进入列编辑模式，向下或向上移动光标，把需要注释的行的开头标记起来，然后按大写的I（【Shift】+【I】），再插入注释符，比如&quot;//&quot;，再按Esc，即可全部注释。  使用Vim，批量去掉注释： 1【Ctrl】+【V】，进入列编辑模式，横向选中列的个数（如&quot;//&quot;注释符号，需要选中两列），然后按【D】，就会删除注释符号  Vim取消搜索后的高亮：">
@@ -190,6 +190,11 @@
 
 </li>
 </ol>
+<ol start="4">
+<li><p>linux 如何将一个大文件分成几个小文件</p>
+<p>1.命令：split，例子：<br>2.以行数拆分 -l参数：<br>3.split –l 50 原始文件 拆分后文件名前缀<br>4.说明：以50行对文件进行拆分，最后一个文件的行数没有50行以实际行数进行分配，比如有一个名为 wlan_date.txt的文件，公有120行，进行拆分：<br>split -l 50 wlan_date.txt wlan  </p>
+</li>
+</ol>
 
       
 
@@ -303,6 +308,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/欧氏距离.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
   
   
     <a href="/biology-knowledge.html" id="article-nav-older" class="article-nav-link-wrap">

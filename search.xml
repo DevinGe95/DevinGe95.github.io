@@ -3,6 +3,18 @@
   
     
     <entry>
+      <title></title>
+      <url>/%E6%AC%A7%E6%B0%8F%E8%B7%9D%E7%A6%BB.html</url>
+      <content type="html"><![CDATA[<h1 id="欧氏距离"><a href="#欧氏距离" class="headerlink" title="欧氏距离"></a>欧氏距离</h1><p>欧氏距离一般只欧几里得度量，在数学中，欧几里得距离或欧几里得度量是欧几里得空间中<strong>两点间“普通”（即直线）距离</strong>。使用这个距离，欧氏空间成为度量空间。相关联的范数称为欧几里得范数。较早的文献称之为毕达哥拉斯度量。</p>
+<p>欧几里得度量（euclidean metric）（也称欧氏距离）是一个通常采用的距离定义，指在m维空间中两个点之间的真实距离，或者向量的自然长度（即该点到原点的距离）。在二维和三维空间中的欧氏距离就是两点之间的实际距离</p>
+<h3 id="二维空间的公式"><a href="#二维空间的公式" class="headerlink" title="二维空间的公式"></a>二维空间的公式</h3><p><img src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/pic/item/e7cd7b899e510fb335a3e2f3d533c895d1430c1f.jpg" alt="img"></p>
+<p>其中，<img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/pic/item/9f2f070828381f3082f81bcda5014c086f06f0f5.jpg" alt="img"> 为点 <img src="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/pic/item/18d8bc3eb13533fa7d07024aa4d3fd1f41345b25.jpg" alt="img">之间的欧氏距离；<img src="https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/pic/item/a9d3fd1f4134970a3516814b99cad1c8a7865d68.jpg" alt="img"> 到原点的欧氏距离。</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[LINUX使用笔记]]></title>
       <url>/linux%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0.html</url>
       <content type="html"><![CDATA[<ol>
@@ -17,6 +29,11 @@
 
 
 
+</li>
+</ol>
+<ol start="4">
+<li><p>linux 如何将一个大文件分成几个小文件</p>
+<p>1.命令：split，例子：<br>2.以行数拆分 -l参数：<br>3.split –l 50 原始文件 拆分后文件名前缀<br>4.说明：以50行对文件进行拆分，最后一个文件的行数没有50行以实际行数进行分配，比如有一个名为 wlan_date.txt的文件，公有120行，进行拆分：<br>split -l 50 wlan_date.txt wlan  </p>
 </li>
 </ol>
 ]]></content>
@@ -341,6 +358,26 @@
 
 <p>删除一个字典项：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">del</span> score[<span class="string">'萧峰'</span>]</span><br></pre></td></tr></table></figure>
+
+<p>新键空的字典：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3></blockquote>
+<hr>
+<p>想知道模块了有哪些函数和变量，可以用dir()方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dir(module)</span><br></pre></td></tr></table></figure>
+
+<p>如果只是用到模块中某一个函数或变量，也可通过from…import…指明：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> math <span class="keyword">import</span> pi</span><br><span class="line"><span class="keyword">print</span> (pi)</span><br></pre></td></tr></table></figure>
+
+<p>为了便于理解和避免冲突，还可以给引入的方法换个名字：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> pi <span class="keyword">as</span> math_pi</span><br><span class="line"><span class="keyword">print</span> (math_pi)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h3 id="用文件保存游戏"><a href="#用文件保存游戏" class="headerlink" title="用文件保存游戏"></a>用文件保存游戏</h3></blockquote>
+<hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line"></span><br><span class="line">name = input(<span class="string">'请输入你的名字：'</span>) <span class="comment"># 输入玩家名字</span></span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'game2.txt'</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">lines = f.readlines()</span><br><span class="line">f.close()</span><br><span class="line">scores = &#123;&#125; <span class="comment"># 初始化一个字典</span></span><br><span class="line"><span class="keyword">for</span> l <span class="keyword">in</span> lines:</span><br><span class="line">    s = l.split() <span class="comment"># 把每一行的数据拆成list</span></span><br><span class="line">    score[s[<span class="number">0</span>]] = s[<span class="number">1</span>:] <span class="comment"># 第一项作为key，剩下的作为value</span></span><br><span class="line">score = score.get(name)</span><br><span class="line"><span class="keyword">if</span> score <span class="keyword">is</span> <span class="literal">None</span>: <span class="comment"># 如果没有找到</span></span><br><span class="line">    score = [<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">game_times = int(core[<span class="number">0</span>])</span><br><span class="line">min_times = int(core[<span class="number">1</span>])</span><br><span class="line">total_times = int(core[<span class="number">2</span>])</span><br><span class="line"><span class="keyword">if</span> game_time &gt; <span class="number">0</span>:</span><br><span class="line">    avg_times = total_time/game_times</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    avg_times = <span class="number">0</span></span><br><span class="line">print(<span class="string">'%s,你已经玩了%d次，最少%d轮猜出答案，平均%.2f轮猜出答案'</span> %(name, game_times, min_times, avg_times))</span><br><span class="line"></span><br><span class="line">num = radint(<span class="number">1</span>,<span class="number">100</span>)</span><br><span class="line">times = <span class="number">0</span></span><br><span class="line"><span class="keyword">print</span> (<span class="string">'Guess what I think'</span>)</span><br><span class="line">bingo = <span class="literal">False</span></span><br><span class="line"><span class="keyword">while</span> bingo == <span class="literal">False</span>:</span><br><span class="line">    times </span><br><span class="line">    time += <span class="number">1</span></span><br><span class="line">    answer = int(input())</span><br><span class="line">    <span class="keyword">if</span> answer&lt;num:</span><br><span class="line">        <span class="keyword">print</span> (<span class="string">'too small'</span>)</span><br><span class="line">    <span class="keyword">if</span> answer &gt; num:</span><br><span class="line">        <span class="keyword">print</span> (<span class="string">'too big!'</span>)</span><br><span class="line">    <span class="keyword">if</span> answer == num:</span><br><span class="line">        <span class="keyword">print</span> (<span class="string">'BINGO'</span>)</span><br><span class="line">        bingo = <span class="literal">True</span></span><br><span class="line"><span class="keyword">if</span> game_times == <span class="number">0</span> <span class="keyword">or</span> times&lt; min_times:</span><br><span class="line">    min_times = times</span><br><span class="line">total_times += times</span><br><span class="line">game_times += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 把成绩更新到对应的玩家数据中</span></span><br><span class="line"><span class="comment"># 加str转换成字符串，为后面的格式做准备</span></span><br><span class="line">score[name] = [str(game_times), str(min_times), str(total_times)]</span><br><span class="line">result = <span class="string">''</span> <span class="comment"># 初始化一个空字符串，用来储存数据</span></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> scores:</span><br><span class="line">    line = n + <span class="string">''</span> + <span class="string">''</span>.join(score[n]) + <span class="string">'\n'</span></span><br><span class="line">    result += line <span class="comment"># 添加到result中</span></span><br><span class="line">f = open(<span class="string">'game2.txt'</span>, <span class="string">'w'</span>, encoding = <span class="string">'utf-8'</span>)</span><br><span class="line">f.write(result)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       
