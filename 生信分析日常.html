@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="Devin的生信博客">
 <meta property="og:description" content="Annovar注释优先级：需要注意的是，如果该变异找到多种注释，ANNOVAR将会对它进行比较，以exonic = splicing &amp;gt; ncRNA &amp;gt; UTR5/UTR3 &amp;gt; intron &amp;gt; upstream/downstream &amp;gt; intergenic 的优先权重，取最优的表示，如果你想ANNOVAR列出该变异所有注释，可以使用–separate参数  Mu">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-08-23T07:23:37.729Z">
+<meta property="og:updated_time" content="2019-10-28T07:09:43.622Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="生信分析日常笔记">
 <meta name="twitter:description" content="Annovar注释优先级：需要注意的是，如果该变异找到多种注释，ANNOVAR将会对它进行比较，以exonic = splicing &amp;gt; ncRNA &amp;gt; UTR5/UTR3 &amp;gt; intron &amp;gt; upstream/downstream &amp;gt; intergenic 的优先权重，取最优的表示，如果你想ANNOVAR列出该变异所有注释，可以使用–separate参数  Mu">
@@ -207,6 +207,9 @@
 
 
 </li>
+</ul>
+<ul>
+<li>用R在run大数据的时候要经常使用gc()，清除中间变量占用的大量内存，否则内存会不够用。单纯的使用<code>rm()</code>是不能释放变量占用的内存的。</li>
 </ul>
 
       
