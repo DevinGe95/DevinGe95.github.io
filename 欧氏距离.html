@@ -3,48 +3,31 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta name="google-site-verification" content="7UF9v525Xs-Ol_EhV2euiZsYIXKYYUpUh6utT_4t17o">
-  
+  <meta name="baidu-site-verification" content="jFhCUMZOzN">
+  <% var title="page.title;" if (is_archive()){ ; (is_month()){ +=": " page.year ' page.month; } else (is_year()){ page.year; (is_category()){ page.category; (is_tag()){ page.tag; %>
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="dns-prefetch" href="http://bio-devin.top">
-  <title>Devin的生信博客</title>
+  <link rel="dns-prefetch" href="<%= config.url %>">
+  <title><% if (title){ %><%= title %> | <% } %><%= config.title %></%=></%></%=></%></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="欧氏距离欧氏距离一般只欧几里得度量，在数学中，欧几里得距离或欧几里得度量是欧几里得空间中两点间“普通”（即直线）距离。使用这个距离，欧氏空间成为度量空间。相关联的范数称为欧几里得范数。较早的文献称之为毕达哥拉斯度量。 欧几里得度量（euclidean metric）（也称欧氏距离）是一个通常采用的距离定义，指在m维空间中两个点之间的真实距离，或者向量的自然长度（即该点到原点的距离）。在二维和三维空">
-<meta name="keywords" content="Bioinformatics">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Devin的生信博客">
-<meta property="og:url" content="http://bio-devin.top/欧氏距离.html">
-<meta property="og:site_name" content="Devin的生信博客">
-<meta property="og:description" content="欧氏距离欧氏距离一般只欧几里得度量，在数学中，欧几里得距离或欧几里得度量是欧几里得空间中两点间“普通”（即直线）距离。使用这个距离，欧氏空间成为度量空间。相关联的范数称为欧几里得范数。较早的文献称之为毕达哥拉斯度量。 欧几里得度量（euclidean metric）（也称欧氏距离）是一个通常采用的距离定义，指在m维空间中两个点之间的真实距离，或者向量的自然长度（即该点到原点的距离）。在二维和三维空">
-<meta property="og:locale" content="zh">
-<meta property="og:image" content="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/pic/item/e7cd7b899e510fb335a3e2f3d533c895d1430c1f.jpg">
-<meta property="og:image" content="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/pic/item/9f2f070828381f3082f81bcda5014c086f06f0f5.jpg">
-<meta property="og:image" content="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/pic/item/18d8bc3eb13533fa7d07024aa4d3fd1f41345b25.jpg">
-<meta property="og:image" content="https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/pic/item/a9d3fd1f4134970a3516814b99cad1c8a7865d68.jpg">
-<meta property="og:updated_time" content="2019-10-24T09:30:01.222Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Devin的生信博客">
-<meta name="twitter:description" content="欧氏距离欧氏距离一般只欧几里得度量，在数学中，欧几里得距离或欧几里得度量是欧几里得空间中两点间“普通”（即直线）距离。使用这个距离，欧氏空间成为度量空间。相关联的范数称为欧几里得范数。较早的文献称之为毕达哥拉斯度量。 欧几里得度量（euclidean metric）（也称欧氏距离）是一个通常采用的距离定义，指在m维空间中两个点之间的真实距离，或者向量的自然长度（即该点到原点的距离）。在二维和三维空">
-<meta name="twitter:image" content="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/pic/item/e7cd7b899e510fb335a3e2f3d533c895d1430c1f.jpg">
-  
-    <link rel="alternative" href="/atom.xml" title="Devin的生信博客" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
+  <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
+  <% if (theme.rss){ %>
+    <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
+  <% } %>
+  <% if (theme.favicon){ %>
+    <link rel="icon" href="<%- theme.favicon %>">
+  <% } %>
+  <%- partial('css') %>
   <style type="text/css">
-  
+  <% var defaultCtnBg = 'linear-gradient(200deg,#a0cfe4,#e8c37e)' %>
     #container.show {
-      background: linear-gradient(200deg,#ccc,#000);
+      background: <%= theme.style && theme.style.slider ? theme.style.slider : defaultCtnBg %>;
     }
   </style>
-  
+  <%- partial('google-analytics') %>
+  <%- partial('baidu-analytics') %>
+</%-></%-></%-></%></%></%></%></%-></%></head>
 
-  
-
-</head>
-</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -158,7 +141,7 @@
       <div id="wrapper" class="body-wrap">
         <div class="menu-l">
           <div class="canvas-wrap">
-            <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
+            <canvas data-colors="#eaeaea" data-sectionheight="100" data-contentid="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
             <article id="post-欧氏距离" class="article article-type-post " itemscope itemprop="blogPost">
@@ -441,7 +424,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

@@ -35,6 +35,16 @@
 <li><p>linux 如何将一个大文件分成几个小文件</p>
 <p>1.命令：split，例子：<br>2.以行数拆分 -l参数：<br>3.split –l 50 原始文件 拆分后文件名前缀<br>4.说明：以50行对文件进行拆分，最后一个文件的行数没有50行以实际行数进行分配，比如有一个名为 wlan_date.txt的文件，公有120行，进行拆分：<br>split -l 50 wlan_date.txt wlan  </p>
 </li>
+<li><p>添加/删除某个环境变量</p>
+<p>export LD_LIBRARY_PATH =/you/path/to:$LD_LIBRARY_PATH   添加环境变量</p>
+<p>unset LD_LIBRARY_PATH 删除环境变量</p>
+<p>需要修改/etc/profile </p>
+<p>非root用户需要修改~/.bashrc</p>
+<p>并使用source ~/.bashrc</p>
+</li>
+<li><p>删除某个文件的第一行</p>
+<p>sed -i ‘1d’ filename</p>
+</li>
 </ol>
 ]]></content>
       
@@ -507,7 +517,27 @@
 </li>
 </ul>
 <ul>
-<li>用R在run大数据的时候要经常使用gc()，清除中间变量占用的大量内存，否则内存会不够用。单纯的使用<code>rm()</code>是不能释放变量占用的内存的。</li>
+<li><p>用R在run大数据的时候要经常使用gc()，清除中间变量占用的大量内存，否则内存会不够用。单纯的使用<code>rm()</code>是不能释放变量占用的内存的。</p>
+</li>
+<li><p>PyClone的分析结果可以无缝连接CITUP</p>
+<p>运行run_citup_qip.sh freq.txt cluster.txt results.h5 –submit local</p>
+<p>输出结果是一个HDF格式的h5文件：results.h5</p>
+<p> 这是一个基于键引用的树型结构，可以用Python的h5py包读取处理数据还需要numpy和pandas</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hf=h5py.File(results.h5,<span class="string">'r'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>用hf.keys()命令我们可以看到有两个键results和trees，这两个键下面又包含很多键</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opnum=hf[<span class="string">"results/optimal/index"</span>][<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+<p>获取此树的节点克隆频率</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cellfreq=hf[<span class="string">"trees/"</span> + str(opnum) + <span class="string">"/clone_freq/block0_values"</span>][:]</span><br></pre></td></tr></table></figure>
+
+<p>获取此树的分支进化：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree=hf[<span class="string">"trees/"</span> + str(opnum) + <span class="string">"/adjacency_list/block0_values"</span>][:]</span><br></pre></td></tr></table></figure>
+
+<p>将这两个文件整理成TimeScape的输入文件</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timescape(clonal_prev = clonal_prev,tree_edges = tree_edges,mutations = <span class="string">"NA"</span>,clone_colours = <span class="string">"NA"</span>,perturbations = <span class="string">"NA"</span>)</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
 ]]></content>
       
