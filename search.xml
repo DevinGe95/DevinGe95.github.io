@@ -45,6 +45,10 @@
 <li><p>删除某个文件的第一行</p>
 <p>sed -i ‘1d’ filename</p>
 </li>
+<li><p>删除文件中的换行符\n</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tr '\n' ' ' &lt; filename|sed 's/ //g' &gt; newfilename</span><br></pre></td></tr></table></figure>
+
+</li>
 </ol>
 ]]></content>
       
@@ -536,6 +540,12 @@
 
 <p>将这两个文件整理成TimeScape的输入文件</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timescape(clonal_prev = clonal_prev,tree_edges = tree_edges,mutations = <span class="string">"NA"</span>,clone_colours = <span class="string">"NA"</span>,perturbations = <span class="string">"NA"</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>How to run MutSigCV</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/Software/MutSigCV_MCR/run_MutSigCV.sh /usr/local/MATLAB/MATLAB_Compiler_Runtime/v81 allsamples.vep.maf ~/Software/Ref_DriverGene/exome_full192.coverage.txt ~/Software/Ref_DriverGene/gene.covariates.txt my_results ~/Software/Ref_DriverGene/mutation_type_dictionary_file.txt ~/Software/Ref_DriverGene/chr_files_hg38</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>How to get ANNOVAR input file</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for i in *.new ;do awk -F '\t' '&#123;print$1"\t"$2"\t"$2"\t"$4"\t"$5&#125;' $i &gt; $i".annotate";done</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
