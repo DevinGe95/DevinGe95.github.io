@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="Devin的生信博客">
 <meta property="og:description" content="Annovar注释优先级：需要注意的是，如果该变异找到多种注释，ANNOVAR将会对它进行比较，以exonic = splicing &amp;gt; ncRNA &amp;gt; UTR5/UTR3 &amp;gt; intron &amp;gt; upstream/downstream &amp;gt; intergenic 的优先权重，取最优的表示，如果你想ANNOVAR列出该变异所有注释，可以使用–separate参数  Mu">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-12-03T02:38:49.518Z">
+<meta property="og:updated_time" content="2019-12-10T02:53:11.792Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="生信分析日常笔记">
 <meta name="twitter:description" content="Annovar注释优先级：需要注意的是，如果该变异找到多种注释，ANNOVAR将会对它进行比较，以exonic = splicing &amp;gt; ncRNA &amp;gt; UTR5/UTR3 &amp;gt; intron &amp;gt; upstream/downstream &amp;gt; intergenic 的优先权重，取最优的表示，如果你想ANNOVAR列出该变异所有注释，可以使用–separate参数  Mu">
@@ -234,6 +234,37 @@
 </li>
 <li><p>How to get ANNOVAR input file</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for i in *.new ;do awk -F '\t' '&#123;print$1"\t"$2"\t"$2"\t"$4"\t"$5&#125;' $i &gt; $i".annotate";done</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>替换R中的NA缺失值为空格</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dt[is.na(dt)] &lt;- <span class="number">0</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>How to run CNVkit</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnvkit.py batch C10A.sort.bam -n ~/Normalsample_data/Rawdata/48gene/OUT/filterbampath/C*.sort.bam -m amplicon -t ~/48genepanel.bed  -f ~/hg38/hg38.chrom.fa --output-reference my_reference.cnn --output-dir ../cnvkit/</span><br></pre></td></tr></table></figure>
+
+<p>下一次再运行的时候就不再需要<code>--output-reference</code>参数，只用使用<code>-r</code>后面接my_reference.cnn</p>
+<p>这一步的结果可以产生cnr和cns文件，利用这两个文件可以进行拷贝数整体情况的画图</p>
+<p>输出seg文件，使用PureCN对肿瘤纯度进行估计</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnvkit.py export seg -o C10A.sort.seg C10A.sort.cns</span><br></pre></td></tr></table></figure>
+
+<p>安装PureCN</p>
+<p><code>PureCN</code> 是 <code>Bioconductor</code> 包，安装方法很简单，打开R输入以下命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1if (!requireNamespace(&quot;BiocManager&quot;, quietly = TRUE))2    install.packages(&quot;BiocManager&quot;)34BiocManager::install(&quot;PureCN&quot;)</span><br></pre></td></tr></table></figure>
+
+<p><code>PureCN</code> 命令行依赖于 <code>optparse</code> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1install.packages(&quot;optparse&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，为了方便使用，配置一个 <code>$PURECN</code> 环境变量。打开 <code>R</code> 输入下面命令能获得一个地址。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">system.file(<span class="string">"extdata"</span>, package=<span class="string">"PureCN"</span>)<span class="number">2</span>[<span class="number">1</span>] <span class="string">"/usr/local/lib64/R/library/PureCN/extdata"</span></span><br></pre></td></tr></table></figure>
+
+<p> 然后将该地址设为环境变量 <code>$PURECN</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PURECN="/usr/local/lib64/R/library/PureCN/extdata"</span><br></pre></td></tr></table></figure>
+
+<p> 需要永久保存则将 <code>export</code> 语句写入 <code>~/.bashrc</code> 文件。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Rscript $PURECN/PureCN.R \</span><br><span class="line">	--sampleid ID \</span><br><span class="line">	--out output_dir \</span><br><span class="line">	--tumor example.cnr \</span><br><span class="line">	--segfile example.seg \</span><br><span class="line">	--genome hg38</span><br></pre></td></tr></table></figure>
+
+<p>将估计出的可信度最高的肿瘤purity，使用cnvkit call</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnvkit.py call C10A.sort.cns -y -m clonal --purity 0.37 -o C10A.sort.call.cns</span><br></pre></td></tr></table></figure>
+
 
 </li>
 </ul>
